@@ -66,6 +66,7 @@ mysqli_close($connect);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete User</title>
     <?php require_once '../components/boot.php' ?>
+    <link rel="stylesheet" href="../2.css">
     <style type="text/css">
         fieldset {
             margin: auto;
@@ -77,17 +78,12 @@ mysqli_close($connect);
             width: 70px !important;
             height: 70px !important;
         }
-        .hero {
-            background: rgb(2, 0, 36);
-            background: linear-gradient(24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
-        }
+        
     </style>
 </head>
 
-<body style="background-image: url(./aaaas.jpeg)" class="text-center">
-    <div class="hero">
-     <h1 class="text-white">The Best Car Rent Agency </h1>
-    </div>
+<body  class="text-center">
+<?php include '../components/hero.php'?>
     <div class="<?php echo $class; ?>" role="alert">
         <p><?php echo ($message) ?? ''; ?></p>
     </div>
@@ -108,8 +104,10 @@ mysqli_close($connect);
             <input type="hidden" name="id" value="<?php echo $id ?>" />
             <input type="hidden" name="picture" value="<?php echo $picture ?>" />
             <button class="btn btn-danger" type="submit">Yes, delete it!</button>
-            <a href="../booking_adm.php"><button class="btn btn-warning" type="button">No, go back!</button></a>
+            <a href="../adopt_adm.php"><button class="btn btn-warning" type="button">No, go back!</button></a>
         </form>
     </fieldset>
+    <div class="margin3"></div>
+    <?php include '../components/footer.php'?>
 </body>
 </html>

@@ -24,22 +24,22 @@ if(mysqli_num_rows($result)  > 0) {
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     
  $tbody .= "<tr>
-            <td>" . $row['adpt_id'] . "</td>
+            <td class='not-visible'>" . $row['adpt_id'] . "</td>
             <td>" . $row['f_name'] . "</td>
             <td>" . $row['l_name'] . " </td>
-            <td>" . $row['email'] . " </td>
-            <td>" . $row['address'] . "</td>
-            <td>" . $row['city'] . "</td>
-            <td>" . $row['birth_date'] . "</td>
-            <td>" . $row['phone'] . "</td>
-            <td>" . $row['anim_id'] . "</td>
+            <td class='not-visible'>" . $row['email'] . " </td>
+            <td class='not-visible'>" . $row['address'] . "</td>
+            <td class='not-visible'>" . $row['city'] . "</td>
+            <td class='not-visible'>" . $row['birth_date'] . "</td>
+            <td class='not-visible'>" . $row['phone'] . "</td>
+            <td class='not-visible'>" . $row['anim_id'] . "</td>
             <td>" . $row['kind'] . "</td>
             <td>" . $row['name'] . "</td>
-            <td>" . $row['breed'] . " </td>
-            <td>" . $row['age'] . " </td>
-            <td>" . $row['location'] . "</td>
-            <td>" . $row['size'] . "</td>
-            <td>" . $row['sex'] . "</td>
+            <td class='not-visible'>" . $row['breed'] . " </td>
+            <td class='not-visible'>" . $row['age'] . " </td>
+            <td class='not-visible'>" . $row['location'] . "</td>
+            <td class='not-visible'>" . $row['size'] . "</td>
+            <td class='not-visible'>" . $row['sex'] . "</td>
             <td>" . $row['date'] . "</td>
             <td><a href='adopting/delete.php?id=" . $row['adpt_id'] . "'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
          </tr>";
@@ -83,38 +83,38 @@ mysqli_close($connect);
     </style>
 </head>
 
-<body style="background-image: url(./aaaas.jpeg)" >
-   
+<body  >
+<?php include 'components/hero.php'?>
         
-            <div style="height: 10rem;"  class="text-center">
+            <div  class="text-center">
                 <img class="userImage" src="./pictures/admavatar.png" alt="Adm avatar">
                 <p class="">Administrator</p>
                 
                 <a class="btn btn-warning" href="dashboard.php">Back</a>
                
             </div>
-            <div   class="text-center ">
+            <div   class="text-center container ">
                 <p class='h2'>Adoptions</p>
 
-                <table class='table table-striped'>
+                <table class='table table1 table-striped'>
                     <thead class='table-success'>
                         <tr>
-                            <th>Adoption ID</th>
+                            <th class='not-visible'>Adoption ID</th>
                             <th>First Name</th>
                             <th>Last Name</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                            <th>City</th>
-                            <th>Date of Birth</th>
-                            <th>Phone</th>
-                            <th>Animal  ID</th>
+                            <th class='not-visible'>Email</th>
+                            <th class='not-visible'>Address</th>
+                            <th class='not-visible'>City</th>
+                            <th class='not-visible'>Date of Birth</th>
+                            <th class='not-visible'>Phone</th>
+                            <th class='not-visible'>Animal  ID</th>
                             <th>Kind</th>
                             <th>Name</th>
-                            <th>Breed</th>
-                            <th>Age</th>
-                            <th>Location</th>
-                            <th>Size</th>
-                            <th>Location</th>
+                            <th class='not-visible'>Breed</th>
+                            <th class='not-visible'>Age</th>
+                            <th class='not-visible'>Location</th>
+                            <th class='not-visible'>Size</th>
+                            <th class='not-visible'>Sex</th>
                             <th>Adoption Date</th>
                             <th>Action</th>
                         </tr>
@@ -125,6 +125,6 @@ mysqli_close($connect);
                 </table>
             </div>
        
-    
+            <?php include 'components/footer.php'?>
 </body>
 </html>

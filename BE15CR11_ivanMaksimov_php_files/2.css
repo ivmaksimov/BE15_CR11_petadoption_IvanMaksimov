@@ -1,5 +1,6 @@
 body {
   background: rgb(237, 242, 245);
+  position: relative;
 }
 .content {
   animation-name: fade-in;
@@ -10,8 +11,7 @@ body {
   margin: 20px;
   float: right;
 }
-p {
-}
+
 .sidebar {
   background: rgb(240, 236, 8);
   float: right;
@@ -43,13 +43,10 @@ p {
   margin: 10px;
 }
 .img11:hover {
-  height: 400px;
-  width: 600px;
+  height: 320px;
+  width: 520px;
 }
-h2 {
-  color: blue;
-  font-family: fantasy;
-}
+
 .post-text {
   color: red;
   margin-left: 20px;
@@ -58,10 +55,7 @@ h2 {
 a {
   margin: 10px;
 }
-a:hover {
-  padding: 20px;
-  color: green;
-}
+
 #sut {
   color: blueviolet;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -91,11 +85,11 @@ a:hover {
   margin: 20px 10px;
   height: 200px;
   background: antiquewhite;
-  text
+  
 }
 #email {
   margin: 20px 10px;
-  background: antiquewhite;
+  background-color: antiquewhite;
 }
 #name {
   margin: 20px 10px;
@@ -107,14 +101,120 @@ a:hover {
   background: lawngreen;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+.form-main{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.footer p{
+  padding: 2em;
+  color: white;
+}
+.footer{
+  
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  
+}
+
+.hero1 {
+  text-align: center;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+.hero1 h1{
+  padding: 1em;
+}
+
+.borderr{
+  border: 1px solid red;
+  
+}
+
+.table1{
+  font-size: 14px;
+  width: 100%;
+}
+
+.create-main{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5em;
+}
+
+.dashboard-help{
+  height: 600px;
+}
+
+.delete-main{
+  text-align: center;
+  margin-bottom: 300px;
+}
+
+.margin3{
+  margin: 400px;
+}
+
+.userImage {
+  width: 100px;
+  height: 100px;
+}
+
+.name{
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+}
+
+.det-main{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.det-right{
+  width: 30%
+}
+
+.det-left{
+  width: 20%
+}
+
+.det-center{
+  width: 30%
+}
+
+
+@media screen and (max-width: 767.999px) {
+  .table1{
+    font-size: 12px;
+    width: 100%;
   }
 
+  .not-visible{
+    display: none;
+  }
+
+  .userImage{
+    width: 40px;
+    height: 40px;
+  }
+  .det-main{
+    flex-direction: column;
+    align-items: center;
+  }
+  .det-right{
+    width: 80%
+  }
+  
+  .det-left{
+    width: 80%
+  }
+  
+  .det-center{
+    width: 80%
+  }
 }
 
 

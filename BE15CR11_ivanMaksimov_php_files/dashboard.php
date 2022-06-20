@@ -47,34 +47,28 @@ mysqli_close($connect);
             width: 100px;
             height: auto;
         }
-        .hero {
-            background: rgb(2, 0, 36);
-            background: linear-gradient(24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
-        }
+       
     </style>
 </head>
 
 <body style="background-image: url(./aaaas.jpeg)" class="text-center">
-    <div class="hero">
-            
-            <h1 class="text-white">Animal Adoption</h1>
-        </div>
+    <?php include 'components/hero.php'?>
     <div class="container">
         <div class="">
             <div class="">
                 <img class="userImage" src="./pictures/admavatar.png" alt="Adm avatar">
                 <p class="">Administrator</p>
+                
+            </div>
+            <div class="dashboard-buttons">
                 <a class="btn btn-success" href="animals/index.php">Manage Animals</a>
                 <a class="btn btn-primary" href="users_adm.php">Manage Users</a>
                 <a class="btn btn-warning" href="adopt_adm.php">Manage Adoptions</a>
                 <a class="btn btn-danger" href="logout.php?logout">Sign Out</a>
             </div>
-            <div class="col-8 mt-2">
-                
-
-                
-            </div>
         </div>
     </div>
+    <div class="dashboard-help"></div>
+    <?php include 'components/footer.php' ?>
 </body>
 </html>

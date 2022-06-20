@@ -66,18 +66,12 @@ mysqli_close($connect);
             width: 70px !important;
             height: 70px !important;
         }
-        .hero {
-            background: rgb(2, 0, 36);
-            background: linear-gradient(24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
-        }
+        
     </style>
 </head>
 
 <body>
-    <div style="background-image: url(./aaaas.jpeg)" class="hero text-center">
-            
-            <h1 class="text-white">The Best Car Rent Agency </h1>
-        </div>
+<?php include 'components/hero.php'?>
     <div class="<?php echo $class; ?>" role="alert">
         <p><?php echo ($message) ?? ''; ?></p>
     </div>
@@ -99,5 +93,6 @@ mysqli_close($connect);
             <a href="dashboard.php"><button class="btn btn-warning" type="button">No, go back!</button></a>
         </form>
     </fieldset>
+    <?php include 'components/footer.php'?>
 </body>
 </html>

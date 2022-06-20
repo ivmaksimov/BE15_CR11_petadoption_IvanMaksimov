@@ -25,14 +25,8 @@ $tbody='';
 if(mysqli_num_rows($result)  > 0) {     
     while($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)){         
        $tbody .= "<tr><td><img class='img-thumbnail' src='./pictures/" . $rows['picture'] . "'</td>
-            
             <td>" . $rows['kind'] . "</td>
-            
             <td>" . $rows['name'] . "</td>
-            
-            
-            
-           
             <td>" . $rows['status'] . "</td>
             <td><a href='moreinfo.php?id=" . $rows['anim_id'] . "'><button class='btn btn-primary btn-sm' type='button'>More Info</button></a>
             
@@ -51,15 +45,7 @@ mysqli_close($connect);
     <?php require_once 'components/boot.php' ?>
      <link rel="stylesheet" type="text/css" href="2.css">
     <style>
-        .userImage {
-            width: 200px;
-            height: 200px;
-        }
-        .img-thumbnail {
-            width: 70px !important;
-            height: 70px !important;
-        }
-
+        
         .hero {
             background: rgb(2, 0, 36);
             background: linear-gradient(24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
@@ -67,47 +53,44 @@ mysqli_close($connect);
         .image{
             margin:1rem
         }
-        .name{
-            margin-top:50px;
-            margin-left:50px;
+        .img-thumbnail{
+            width:100px;
+            
         }
+        
     </style>
 </head>
 
-<body style="background-image: url()" >
-    <div class="container">
-       <div class="hero text-center d-flex ">
-   
+<body>
+    <div class="hero text-center d-flex ">
         <div class="image" >
             <img class="userImage" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['f_name']; ?>">
             <p class="text-white">Hi <?php echo $row['f_name']; ?></p>
         </div>
-         <div class="name">
-           <h1 class="text-white">Animal Adoption</h1> 
+        <div class="name">
+            <h1 class="text-white">Animal Adoption</h1> 
             <h3 class="text-danger">More from  -<?php echo $id ?>s </h3>
-           
         </div>
-       </div>
-
-    <div >
-    <div style="height: 5rem;" class=" text-center  ">
-    <a class="btn btn-success" href="home.php">Home</a> 
     </div>
-         <p class='h2'><?php echo $id ?>s</p>  
-            <table class='table '>
-                <thead class='table-success'>
-                    <tr>
-                        <th>Picture</th>
-                        <th>Kind</th>
-                        <th>Name</th>
-                        <th>Picture</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody >
-                    <?= $tbody;?>
-                </tbody>
-            </table>
-  </div>
+    <div class="container">
+        <div style="height: 5rem;" class=" text-center  ">
+            <a class="btn btn-success" href="home.php">Home</a> 
+        </div>
+        <p class='h2'><?php echo $id ?>s</p>  
+        <table class='table '>
+            <thead class='table-success'>
+                <tr>
+                    <th>Picture</th>
+                    <th>Kind</th>
+                    <th>Name</th>
+                    <th>Picture</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody >
+                <?= $tbody;?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

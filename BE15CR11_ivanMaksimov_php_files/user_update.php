@@ -87,6 +87,7 @@ mysqli_close($connect);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit User</title>
   <?php require_once 'components/boot.php' ?>
+  <link rel="stylesheet" href="2.css">
   <style type="text/css">
       fieldset {
           margin: auto;
@@ -98,68 +99,85 @@ mysqli_close($connect);
           width: 70px !important;
           height: 70px !important;
       }
+      .hero {
+            background: rgb(2, 0, 36);
+            background: linear-gradient(24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
+        }
+        .image{
+            margin:1rem
+        }
   </style>
 </head>
 
 <body>
-  <div class="container">
-      <div class="<?php echo $class; ?>" role="alert">
-          <p><?php echo ($message) ?? ''; ?></p>
-          <p><?php echo ($uploadError) ?? ''; ?></p>
-      </div>
-
-      <h2>Update</h2>
-      <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $data['picture'] ?>' alt="<?php echo $f_name ?>">
-      <form method="post" enctype="multipart/form-data">
-          <table class="table">
-              <tr>
-                  <th>First Name</th>
-                  <td><input class="form-control" type="text" name="f_name" placeholder="First Name" value="<?php echo $f_name ?>" /></td>
-              </tr>
-              <tr>
-                  <th>Last Name</th>
-                  <td><input class="form-control" type="text" name="l_name" placeholder="Last Name" value="<?php echo $l_name ?>" /></td>
-              </tr>
-              <tr>
-                  <th>Email</th>
-                  <td><input class="form-control" type="email" name="email" placeholder="Email" value="<?php echo $email ?>" /></td>
-              </tr>
-              <tr>
-                  <th>Date of birth</th>
-                  <td><input class="form-control" type="date" name="birth_date" placeholder="Date of birth" value="<?php echo $birth_date ?>" /></td>
-              </tr>
-              <tr>
-                  <th>Address</th>
-                  <td><input class="form-control" type="text" name="address" placeholder="Address" value="<?php echo $address ?>" /></td>
-              </tr>
-              <tr>
-                  <th>City</th>
-                  <td><input class="form-control" type="text" name="city" placeholder="City" value="<?php echo $city ?>" /></td>
-              </tr>
-              <tr>
-                  <th>Country</th>
-                  <td><input class="form-control" type="text" name="country" placeholder="Coyntry" value="<?php echo $country ?>" /></td>
-              </tr>
-              <tr>
-                  <th>Phone</th>
-                  <td><input class="form-control" type="number" name="phone" placeholder="Phone" value="<?php echo $phone ?>" /></td>
-              </tr>
-               <tr>
-                  <th>Password</th>
-                  <td><input class="form-control" type="password" name="password" placeholder="Password" value="<?php echo $password ?>" /></td>
-              </tr>
-              <tr>
-                  <th>Picture</th>
-                  <td><input class="form-control" type="file" name="picture" /></td>
-              </tr>
-              <tr>
-                  <input type="hidden" name="id" value="<?php echo $data['user_id'] ?>" />
-                  <input type="hidden" name="picture" value="<?php echo $picture ?>" />
-                  <td><button name="submit" class="btn btn-success" type="submit">Save Changes</button></td>
-                  <td><a href="<?php echo $backBtn ?>"><button class="btn btn-warning" type="button">Back</button></a></td>
-              </tr>
-          </table>
-      </form>
-  </div>
+    <div class="hero text-center d-flex ">
+        <div class="image" >
+            <img class="userImage" src="pictures/<?php echo $picture; ?>" alt="<?php echo $f_name; ?>">
+            <p class="text-white">Hi <?php echo $f_name; ?></p>
+        </div>
+         <div class="name">
+           <h1 class="text-white">Animal Adoption </h1> 
+           <h3 class="text-danger">My Adoptions</h3>
+        </div>
+    </div>
+    <div class="container">
+        <div class="<?php echo $class; ?>" role="alert">
+            <p><?php echo ($message) ?? ''; ?></p>
+            <p><?php echo ($uploadError) ?? ''; ?></p>
+        </div>
+        <h2>Update</h2>
+        <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $data['picture'] ?>' alt="<?php echo $f_name ?>">
+        <form method="post" enctype="multipart/form-data">
+            <table class="table">
+                <tr>
+                    <th>First Name</th>
+                    <td><input class="form-control" type="text" name="f_name" placeholder="First Name" value="<?php echo $f_name ?>" /></td>
+                </tr>
+                <tr>
+                    <th>Last Name</th>
+                    <td><input class="form-control" type="text" name="l_name" placeholder="Last Name" value="<?php echo $l_name ?>" /></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td><input class="form-control" type="email" name="email" placeholder="Email" value="<?php echo $email ?>" /></td>
+                </tr>
+                <tr>
+                    <th>Date of birth</th>
+                    <td><input class="form-control" type="date" name="birth_date" placeholder="Date of birth" value="<?php echo $birth_date ?>" /></td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td><input class="form-control" type="text" name="address" placeholder="Address" value="<?php echo $address ?>" /></td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td><input class="form-control" type="text" name="city" placeholder="City" value="<?php echo $city ?>" /></td>
+                </tr>
+                <tr>
+                    <th>Country</th>
+                    <td><input class="form-control" type="text" name="country" placeholder="Coyntry" value="<?php echo $country ?>" /></td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td><input class="form-control" type="number" name="phone" placeholder="Phone" value="<?php echo $phone ?>" /></td>
+                </tr>
+                <tr>
+                    <th>Password</th>
+                    <td><input class="form-control" type="password" name="password" placeholder="Password" value="<?php echo $password ?>" /></td>
+                </tr>
+                <tr>
+                    <th>Picture</th>
+                    <td><input class="form-control" type="file" name="picture" /></td>
+                </tr>
+                <tr>
+                    <input type="hidden" name="id" value="<?php echo $data['user_id'] ?>" />
+                    <input type="hidden" name="picture" value="<?php echo $picture ?>" />
+                    <td><button name="submit" class="btn btn-success" type="submit">Save Changes</button></td>
+                    <td><a href="<?php echo $backBtn ?>"><button class="btn btn-warning" type="button">Back</button></a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <?php include 'components/footer.php' ?>
 </body>
 </html>

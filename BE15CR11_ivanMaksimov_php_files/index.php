@@ -73,13 +73,10 @@ mysqli_close($connect);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login & Registration System</title>
     <?php require_once 'components/boot.php' ?>
-       <link rel="stylesheet" type="text/css" href="2.css">
+       <link rel="stylesheet" href="2.css">
     <style type="text/css">
         
-        .hero {
-            background: rgb(2, 0, 36);
-            background: linear-gradient(24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
-        }
+       
         .container{
             margin-top: 7rem;
         }
@@ -90,29 +87,30 @@ mysqli_close($connect);
 </head>
 
 <body style="background-image: url(./aaaas.jpeg)" class="text-center">
-    <div class="hero">
-     <h1 class="text-white">Animal Adoption </h1>
-</div>
+<?php include 'components/hero.php'?>
     <div class="container">
-        <form class="w-75" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-            <h2>Login</h2>
-            <hr />
-            <?php
-            if (isset($errMSG)) {
-                echo $errMSG;
-            }
-            ?>
+        <div class="form-main">
+            <form class="w-75" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
+                <h2>Login</h2>
+                <hr />
+                <?php
+                if (isset($errMSG)) {
+                    echo $errMSG;
+                }
+                ?>
 
-            <input type="email" autocomplete="off" name="email" class="form-control" placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" />
-            <span class="text-danger"><?php echo $emailError; ?></span>
+                <input type="email" autocomplete="off" name="email" class="form-control" placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" />
+                <span class="text-danger"><?php echo $emailError; ?></span>
 
-            <input type="password" name="password" class="form-control" placeholder="Your Password" maxlength="15" />
-            <span class="text-danger"><?php echo $passError; ?></span>
-            <hr />
-            <button class="btn btn-block btn-primary" type="submit" name="btn-login">Sign In</button>
-            <hr />
-            <a href="register.php">Not registered yet? Click here</a>
-        </form>
+                <input type="password" name="password" class="form-control" placeholder="Your Password" maxlength="15" />
+                <span class="text-danger"><?php echo $passError; ?></span>
+                <hr />
+                <button class="btn btn-block btn-primary" type="submit" name="btn-login">Sign In</button>
+                <hr />
+                <a href="register.php">Not registered yet? Click here</a>
+            </form>
+        </div>
     </div>
+    <?php include 'components/footer.php' ?>
 </body>
 </html>

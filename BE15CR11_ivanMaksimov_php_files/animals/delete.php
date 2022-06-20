@@ -39,7 +39,7 @@ if ($_GET['id']) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Animal</title>
     <?php require_once '../components/boot.php' ?>
-       <link rel="stylesheet" type="text/css" href="2.css">
+       <link rel="stylesheet" type="text/css" href="../2.css">
     <style type="text/css">
         fieldset {
             margin: auto;
@@ -51,18 +51,14 @@ if ($_GET['id']) {
             width: 70px !important;
             height: 70px !important;
         }
-        .hero {
-            background: rgb(2, 0, 36);
-            background: linear-gradient(24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
-        }
+        
     </style>
 </head>
 
 
-    <body style="background-image: url(./aaaas.jpeg)" class="text-center">
-    <div class="hero">
-            <h1 class="text-white">Animals Adoption</h1>
-        </div>
+    <body  >
+    <?php include '../components/hero.php' ?>
+    <div class="delete-main">
     <fieldset>
         <legend class='h2 mb-3'>Delete request <img class='img-thumbnail rounded-circle' src='../pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
         <h5>You have selected the data below:</h5>
@@ -82,5 +78,8 @@ if ($_GET['id']) {
             <a href="index.php"><button class="btn btn-warning" type="button">No, go back!</button></a>
         </form>
     </fieldset>
+    </div>
+    
+    <?php include '../components/footer.php' ?>
 </body>
 </html>

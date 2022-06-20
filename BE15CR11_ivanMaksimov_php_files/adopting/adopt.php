@@ -42,20 +42,12 @@ $user_id=$_SESSION['user'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once '../components/boot.php' ?>
     <title>Adopt this pet</title>
-<link rel="stylesheet" type="text/css" href="2.css">
+<link rel="stylesheet" type="text/css" href="../2.css">
     <style>
         fieldset {
             margin: auto;
             margin-top: 100px;
             width: 60%;
-        }
-           .userImage {
-            width: 200px;
-            height: 200px;
-        }
-        .img-thumbnail {
-            width: 70px !important;
-            height: 70px !important;
         }
 
         .hero {
@@ -65,27 +57,26 @@ $user_id=$_SESSION['user'];
         .image{
             margin:1rem
         }
-        .name{
-            margin-top:50px;
-            margin-left:50px;
-        }
+        
     </style>
 </head>
 
 <body >
-    <div class="container">
-        <div class="hero text-center d-flex">
-            <div class="image" >
+    <div class="hero text-center d-flex">
+        <div class="image" >
             <img class="userImage" src="../pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['f_name']; ?>">
             <p class="text-white">Hi <?php echo $row['f_name']; ?></p>
-            </div>
-            <div class="name">
+        </div>
+        <div class="name">
             <h1 class="text-white">Animal Adoption</h1>
             <h3 class="text-danger">Great Choice </h3>
-            </div>
-        </div>
-       
+         </div>
     </div>
+    <div class="container">
+        
+        
+       
+    
     <fieldset>
         <legend class='h2'>Adopt this Pet</legend>
         <form action="./a_adopt.php" method="post" enctype="multipart/form-data">
@@ -112,5 +103,6 @@ $user_id=$_SESSION['user'];
             </table>
         </form>
     </fieldset>
+    </div>
 </body>
 </html>

@@ -69,17 +69,9 @@ if (mysqli_query($connect, $sqla ) === true) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create Adopt</title>
   <?php require_once '../components/boot.php' ?>
-     <link rel="stylesheet" type="text/css" href="2.css">
+     <link rel="stylesheet" type="text/css" href="../2.css">
   <style>
-       .userImage {
-            width: 200px;
-            height: 200px;
-        }
-        .img-thumbnail {
-            width: 70px !important;
-            height: 70px !important;
-        }
-
+       
         .hero {
             background: rgb(2, 0, 36);
             background: linear-gradient(24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
@@ -87,27 +79,26 @@ if (mysqli_query($connect, $sqla ) === true) {
         .image{
             margin:1rem
         }
-        .name{
-            margin-top:50px;
-            margin-left:50px;
-        }
+        
   </style>
 </head>
-<body style="background-image: url(./aaaas.jpeg)">
-    <div class="container">
-        <div class="hero text-center d-flex">
-            <div class="image" >
+<body >
+    <div class="hero text-center d-flex">
+        <div class="image" >
             <img class="userImage" src="../pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['f_name']; ?>">
             <p class="text-white">Hi <?php echo $row['f_name']; ?></p>
-            </div>
-            <div class="name">
+        </div>
+        <div class="name">
             <h1 class="text-white">Animal Adoption</h1>
             <h3 class="text-danger">Great Choice </h3>
-            </div>
         </div>
-       
     </div>
+    <div class="container">
+        
+       
+    
   <h1><?php echo $message ?></h1>
   <a href='../home.php'><button class="btn btn-primary" type='button'>Home</button></a>
+  </div>
 </body>
 </html>

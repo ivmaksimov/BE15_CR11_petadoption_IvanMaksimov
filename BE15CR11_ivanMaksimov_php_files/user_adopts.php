@@ -28,12 +28,6 @@ if(mysqli_num_rows($result)  > 0) {
             <td>" .$rows['date']."</td>
             <td>" .$rows['kind']."</td>
             <td>" .$rows['name']."</td>
-            
-            
-            
-            
-            
-            
             </tr>";
     };
 } else {
@@ -52,10 +46,7 @@ mysqli_close($connect);
     <?php require_once 'components/boot.php' ?>
      <link rel="stylesheet" type="text/css" href="2.css">
     <style>
-        .userImage {
-            width: 200px;
-            height: 200px;
-        }
+        
         .img-thumbnail {
             width: 70px !important;
             height: 70px !important;
@@ -68,17 +59,12 @@ mysqli_close($connect);
         .image{
             margin:1rem
         }
-        .name{
-            margin-top:50px;
-            margin-left:50px;
-        }
+        
     </style>
 </head>
 
-<body style="background-image: url(./aaaas.jpeg)">
-    <div class="container">
-       <div class="hero text-center d-flex ">
-   
+<body >
+    <div class="hero text-center d-flex ">
         <div class="image" >
             <img class="userImage" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['f_name']; ?>">
             <p class="text-white">Hi <?php echo $row['f_name']; ?></p>
@@ -86,33 +72,29 @@ mysqli_close($connect);
          <div class="name">
            <h1 class="text-white">Animal Adoption </h1> 
            <h3 class="text-danger">My Adoptions</h3>
-           
         </div>
-        </div> 
-        
     </div>
-    <div style="height: 5rem;" class=" text-center  ">
-       
+    <div class=" text-center  ">
         <a class="btn btn-primary" href="home.php">Home</a> 
     </div>
 
     <div class="container">
-    <p class='h2'>My Adoptions</p>
-           
-            <table class='table '>
-                <thead class='table-success'>
-                    <tr >
-                        
-                        <th>Date</th>
-                        <th>Kind</th>
-                        <th>Name</th>
-                        
-                    </tr>
-                </thead>
-                <tbody >
-                    <?= $tbody;?>
-                </tbody>
-            </table>
+        <p class='h2'>My Adoptions</p>
+        <table class='table '>
+            <thead class='table-success'>
+                 <tr >
+                    <th>Date</th>
+                    <th>Kind</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody >
+                <?= $tbody;?>
+            </tbody>
+        </table>
+        <div class="margin3"></div>
   </div>
+  
+  <?php include 'components/footer.php' ?>
 </body>
 </html>

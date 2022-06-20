@@ -43,7 +43,7 @@ if ($_GET['id']) {
 <head>
     <title>Edit Animals</title>
     <?php require_once '../components/boot.php' ?>
-       <link rel="stylesheet" type="text/css" href="2.css">
+       <link rel="stylesheet" type="text/css" href="../2.css">
     <style type="text/css">
         fieldset {
             margin: auto;
@@ -55,18 +55,12 @@ if ($_GET['id']) {
             width: 70px !important;
             height: 70px !important;
         }
-        .hero {
-            background: rgb(2, 0, 36);
-            background: linear-gradient(24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
-        }
+       
     </style>
 </head>
 
 <body style="background-image: url(./aaaas.jpeg)" class="text-center">
-    <div class="hero">
-            
-            <h1 class="text-white">Animals Adoption </h1>
-        </div>
+    <?php include '../components/hero.php' ?>
     <fieldset>
         <legend class='h2'>Edit request <img class='img-thumbnail rounded-circle' src='../pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
         <form action="actions/a_update.php" method="post" enctype="multipart/form-data">
@@ -124,5 +118,6 @@ if ($_GET['id']) {
             </table>
         </form>
     </fieldset>
+    <?php include '../components/footer.php' ?>
 </body>
 </html>

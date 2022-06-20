@@ -164,10 +164,7 @@ mysqli_close($connect);
     <link rel="stylesheet" href="2.css">
     <style type="text/css">
         
-        .hero {
-            background: rgb(2, 0, 36);
-            background: linear-gradient(24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
-        }
+        
         .d-grid{
             margin-top: 1rem;
             margin-left: 3rem;
@@ -177,11 +174,9 @@ mysqli_close($connect);
 </head>
 
 <body>
-<body style="background-image: url(./)" class="text-center">
-    <div class="hero">
-     <h1 class="text-white">Welcome to Our Animal Adoption Page</h1>
-    </div>
-    <div class="  text-center ">
+<body  class="text-center">
+<?php include 'components/hero.php'?>
+    <div class="form-main">
         <form class="w-75" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off" enctype="multipart/form-data">
             <h2>Please Sign Up</h2>
             <hr />
@@ -196,74 +191,73 @@ mysqli_close($connect);
             <?php
             }
             ?>
-    <div style="width:;" class="image-grid">
-        <div class="d-grid">
-            <h4>First Name</h4>   
-            <input type="text" name="f_name" class="form-control" placeholder="First name" maxlength="50" value="<?php echo $f_name ?>" />
-            <span class="text-danger"> <?php echo $fnameError; ?> </span>
-        </div>
-        <div class="d-grid ">
-            <h4>Last Name</h4>
-            <input type="text" name="l_name" class="form-control" placeholder="Last Name" maxlength="50" value="<?php echo $l_name ?>" />
-            <span class="text-danger"> <?php echo $fnameError; ?> </span>
+        <div  class="image-grid">
+            <div class="d-grid">
+                <h4>First Name</h4>   
+                <input type="text" name="f_name" class="form-control" placeholder="First name" maxlength="50" value="<?php echo $f_name ?>" />
+                <span class="text-danger"> <?php echo $fnameError; ?> </span>
             </div>
-    </div> 
-    <div class="image-grid"> 
-        <div class="d-grid"> 
-            <h4>Email</h4>           
-            <input type="email" name="email" class="form-control" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
-            <span class="text-danger"> <?php echo $emailError; ?> </span>
-        </div>    
-        <div  class="d-grid">
-            <h4>Password</h4>
-            <input type="password" name="password" class="form-control" placeholder="Enter Password" maxlength="15" />
-            <span class="text-danger"> <?php echo $passError; ?> </span>
+            <div class="d-grid ">
+                <h4>Last Name</h4>
+                <input type="text" name="l_name" class="form-control" placeholder="Last Name" maxlength="50" value="<?php echo $l_name ?>" />
+                <span class="text-danger"> <?php echo $fnameError; ?> </span>
+            </div>
+        </div> 
+        <div class="image-grid"> 
+            <div class="d-grid"> 
+                <h4>Email</h4>           
+                <input type="email" name="email" class="form-control" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
+                <span class="text-danger"> <?php echo $emailError; ?> </span>
+            </div>    
+            <div  class="d-grid">
+                <h4>Password</h4>
+                <input type="password" name="password" class="form-control" placeholder="Enter Password" maxlength="15" />
+                <span class="text-danger"> <?php echo $passError; ?> </span>
+            </div>
         </div>
-    </div>
-    <div class="image-grid">     
-        <div  class=" d-grid">
-            <h4 >Date of Birth</h4>
-                <input  class='form-control' type="date" name="birth_date" value="<?php echo $birth_date ?>" />
-                <span class="text-danger"> <?php echo $bdateError; ?> </span>
-        </div>   
-        <div class="d-grid">
-            <h4>Photo</h4>
-                <input class='form-control' type="file" name="picture">
-                <span class="text-danger"> <?php echo $picError; ?> </span>
+        <div class="image-grid">     
+            <div  class=" d-grid">
+                <h4 >Date of Birth</h4>
+                    <input  class='form-control' type="date" name="birth_date" value="<?php echo $birth_date ?>" />
+                    <span class="text-danger"> <?php echo $bdateError; ?> </span>
+            </div>   
+            <div class="d-grid">
+                <h4>Photo</h4>
+                    <input class='form-control' type="file" name="picture">
+                    <span class="text-danger"> <?php echo $picError; ?> </span>
+            </div>
+        </div>        
+        <div class="image-grid">
+            <div class="d-grid"> 
+                <h4>Adress</h4>
+                <input type="text" name="address" class="form-control" placeholder="Address" maxlength="50" value="<?php echo $address ?>" />
+                <span class="text-danger"> <?php echo $addressError; ?> </span>
+            </div>    
+            <div class="d-grid">    
+                <h4>City</h4>
+                <input type="text" name="city" class="form-control" placeholder="City" maxlength="50" value="<?php echo $city ?>" />
+                <span class="text-danger"> <?php echo $cityError; ?> </span>
+            </div>
         </div>
-    </div>        
-    <div class="image-grid">
-        <div class="d-grid"> 
-              <h4>Adress</h4>
-            <input type="text" name="address" class="form-control" placeholder="Address" maxlength="50" value="<?php echo $address ?>" />
-            <span class="text-danger"> <?php echo $addressError; ?> </span>
-        </div>    
-        <div class="d-grid">    
-            <h4>City</h4>
-            <input type="text" name="city" class="form-control" placeholder="City" maxlength="50" value="<?php echo $city ?>" />
-            <span class="text-danger"> <?php echo $cityError; ?> </span>
+        <div class="image-grid">
+            <div class="d-grid">
+                <h4>Country</h4>
+                <input type="text" name="country" class="form-control" placeholder="Country" maxlength="50" value="<?php echo $country ?>" />
+                <span class="text-danger"> <?php echo $countryError; ?> </span>
+            </div>    
+            <div class="d-grid">
+                <h4>Phone</h4>
+                <input type="number" name="phone" class="form-control" placeholder="Phone" maxlength="10" value="<?php echo $phone ?>" />
+                <span class="text-danger"> <?php echo $phoneError; ?> </span>
+            </div>
         </div>
-    </div>
-    <div class="image-grid">
-        <div class="d-grid">
-            <h4>Country</h4>
-            <input type="text" name="country" class="form-control" placeholder="Country" maxlength="50" value="<?php echo $country ?>" />
-            <span class="text-danger"> <?php echo $countryError; ?> </span>
-        </div>    
-        <div class="d-grid">
-            <h4>Phone</h4>
-            <input type="number" name="phone" class="form-control" placeholder="Phone" maxlength="10" value="<?php echo $phone ?>" />
-            <span class="text-danger"> <?php echo $phoneError; ?> </span>
+        <div class="image-grid">
+            <div class="d-grid">
+                <h4>Date of Registration</h4>
+                <input class='form-control' type="date" name="reg_date" value="<?php echo $reg_date ?>" />
+                    <span class="text-danger"> <?php echo $rdateError; ?> </span>
+            </div>
         </div>
-    </div>
-    <div class="image-grid">
-        <div class="d-grid">
-            <h4>Date of Registration</h4>
-              <input class='form-control' type="date" name="reg_date" value="<?php echo $reg_date ?>" />
-                <span class="text-danger"> <?php echo $rdateError; ?> </span>
-        </div>
-        
-    </div>
             <hr />
             <button type="submit" href="index.php" class="btn btn-block btn-primary" name="btn-signup">Sign Up</button>
             <hr />
@@ -271,6 +265,6 @@ mysqli_close($connect);
         </form>
     </div>
    
-
+    <?php include 'components/footer.php' ?>
 </body>
 </html>

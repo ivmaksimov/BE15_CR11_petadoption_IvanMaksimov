@@ -22,7 +22,7 @@ $tbody = '';
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
         $tbody .= "<tr>
-            <td><img class='img-thumbnail rounded-circle' src='pictures/" . $row['picture'] . "' alt=" . $row['f_name'] . "></td>
+            <td class='not-visible'><img class='img-thumbnail rounded-circle' src='pictures/" . $row['picture'] . "' alt=" . $row['f_name'] . "></td>
             <td>" . $row['f_name'] . " " . $row['l_name'] . "</td>
             <td>" . $row['birth_date'] . "</td>
             <td>" . $row['email'] . "</td>
@@ -66,21 +66,15 @@ mysqli_close($connect);
             width: 100px;
             height: auto;
         }
-        .hero {
-            background: rgb(2, 0, 36);
-            background: linear-gradient(24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
-        }
+       
     </style>
 </head>
 
-<body style="background-image: url(./aaaas.jpeg)" class="text-center">
-    <div class="hero">
-            
-            <h1 class="text-white">Animal Adoption </h1>
-        </div>
+<body  class="text-center">
+   <?php include 'components/hero.php'?>
     <div class="container">
         <div class="">
-            <div style="height: 10rem;" class="">
+            <div  class="">
                 <img class="userImage" src="./pictures/admavatar.png" alt="Adm avatar">
                 <p class="">Administrator</p>
                 <a class="btn btn-success" href="dashboard.php">Home</a>
@@ -90,10 +84,10 @@ mysqli_close($connect);
             <div class="">
                 <p class='h2'>Users</p>
 
-                <table class='table table-striped'>
+                <table class='table table1 table-striped'>
                     <thead class='table-success'>
                         <tr>
-                            <th>Picture</th>
+                            <th class="not-visible">Picture</th>
                             <th>Name</th>
                             <th>Date of birth</th>
                             <th>Email</th>
@@ -108,5 +102,6 @@ mysqli_close($connect);
             </div>
         </div>
     </div>
+    <?php include 'components/footer.php'?>
 </body>
 </html>

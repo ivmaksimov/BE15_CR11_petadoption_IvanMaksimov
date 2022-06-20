@@ -41,10 +41,7 @@ mysqli_close($connect);
             .manageProduct {           
                 margin: auto;
             }
-            .img-thumbnail {
-                width: 70px !important;
-                height: 70px !important;
-            }
+            
             td {          
                 text-align: center;
                 vertical-align: middle;
@@ -52,15 +49,6 @@ mysqli_close($connect);
             tr {
                 text-align: center;
             }
-            .userImage {
-            width: 200px;
-            height: 200px;
-        }
-        .img-thumbnail {
-            width: 70px !important;
-            height: 70px !important;
-        }
-
         .hero {
             background: rgb(2, 0, 36);
             background: linear-gradient(24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
@@ -68,10 +56,7 @@ mysqli_close($connect);
         .image{
             margin:1rem
         }
-        .name{
-            margin-top:80px;
-            margin-left:50px;
-        }
+        
         </style>
         
         
@@ -79,8 +64,8 @@ mysqli_close($connect);
  
   </head>
 
-<body style="background-image: url(./aaaas.jpeg)"   class="    ">
-    <div class="container">
+<body >
+    <div class="">
         <div class="hero text-center d-flex">
             <div class="image" >
                 <img class="userImage" src="./pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['f_name']; ?>">
@@ -93,33 +78,35 @@ mysqli_close($connect);
         </div>
     </div>
 
-    <div style="margin-top:1rem;" class="container">    
-    <a  href=<?php echo './adopting/adopt.php?id=' .$id?>><button style="padding: 1rem; width: 300px;" class='btn btn-success btn-sm' type='button'>Adopt this Pet</button></a>
-    <a  href=<?php echo './more_of.php?id=' .$kind?>><button style="padding: 1rem; width: 300px;" class='btn btn-primary btn-sm' type='button'>More of this kind</button></a>
+    <div style="margin-top:1rem;" >    
+        <a  href=<?php echo './adopting/adopt.php?id=' .$id?>><button  class='btn btn-success btn-sm' type='button'>Adopt this Pet</button></a>
+        <a  href=<?php echo './more_of.php?id=' .$kind?>><button  class='btn btn-primary btn-sm' type='button'>More of this kind</button></a>
     </div>
 
-    <div class="d-flex name text-center">
-        <div style="width:30%">
-            <h1><span class="h3">Name:   </span><?php echo $name ?></h1>
-            <h1><span class="h3">Kind:   </span><?php echo $kind ?></h1>
-            <h1><span class="h3">Breed:   </span><?php echo $breed ?></h1>
-            <h1><span class="h3"></span><?php echo $sex ?></h1>
-            <h1><span class="h3">Age:   </span><?php echo $age ?></h1>
-            <h1><?php echo $size ?> size</h1>
-            <h1 class="h2"><?php echo $location ?></h1>
-            <h1><?php echo $status ?></h1>
+    <div class="det-main text-center">
+        <div class="det-left">
+            <h2><span class="h5">Name:   </span><?php echo $name ?></h2>
+            <h2><span class="h5">Kind:   </span><?php echo $kind ?></h2>
+            <h2><span class="h5">Breed:   </span><?php echo $breed ?></h2>
+            <h2><span class="h5"></span><?php echo $sex ?></h2>
+            <h2><span class="h5">Age:   </span><?php echo $age ?></h2>
+            <h2><?php echo $size ?> size</h2>
+            <h2 class="h3"><?php echo $location ?></h2>
+            <h2><?php echo $status ?></h2>
         </div>
-        <div style="width:30%" >
+        <div class="det-center" >
             <h1><?php echo $name ?></h1>
             <br>
-            <img style="margin-top:1rem;" class="img-tumbnail" src="<?php echo 'pictures/' .$picture ?>" alt="">
+            <img style="margin-top:5rem;margin-bottom:5rem; width:100%" class="" src="<?php echo 'pictures/' .$picture ?>" alt="">
         </div>
          
-        <div style="width:30%">
+        <div class="det-right">
             <h1>Description:</h1>
             <br>
             <br>
             <h3><?php echo $descript ?></h3>
         </div>
-    </div>   
+    </div>
+    
+    <?php include 'components/footer.php' ?>
 </body>
